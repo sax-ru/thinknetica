@@ -25,5 +25,6 @@ const human = Object.create({}, {
 human.fullName = 'Ivan Ivanov';
 human.dateOfBirth = 2000;
 
+
 console.log(human.fullName);
 console.log(human.dateOfBirth);

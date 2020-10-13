@@ -6,6 +6,4 @@ delete obj.name;
 delete obj.lastName;
 
 
-
-
 console.log(obj);

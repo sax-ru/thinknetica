@@ -53,5 +53,5 @@ function filterBySalaryAge(arr, salary, age) { //  список сотрудни
     return arr.filter(item => Number(item.salary) > salary && Number(item.age) > age).map(item => (`${item.firstName} ${item.lastName}`)).join(', ');
 }
 
-console.log('Список сотрудников с зарплатой >4500 и возрастом > 25 лет: ', filterBySalaryAge(employees, 4500,25));
 
+console.log('Список сотрудников с зарплатой >4500 и возрастом > 25 лет: ', filterBySalaryAge(employees, 4500,25));

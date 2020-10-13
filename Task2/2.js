@@ -17,6 +17,6 @@ function compareArrays(arr1, arr2) {
     return true;
 }
 
+
 console.log(compareArrays(arrayN1, arrayN2));
 console.log(compareArrays(arrayS1, arrayS2));
-
