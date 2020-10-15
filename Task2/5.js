@@ -50,7 +50,8 @@ console.log('Отсортировать сотрудников по зарпла
 
 
 function filterBySalaryAge(arr, salary, age) { //  список сотрудников с зарплатой >4500 и возрастом > 25 лет
-    return arr.filter(item => Number(item.salary) > salary && Number(item.age) > age).map(item => (`${item.firstName} ${item.lastName}`)).join(', ');
+    const arrFilter = arr.filter(item => Number(item.salary) > salary && Number(item.age) > age);
+    return arrFilter.map(item => (`${item.firstName} ${item.lastName}`)).join(', ');
 }
 
 
