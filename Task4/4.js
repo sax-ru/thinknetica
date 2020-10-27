@@ -27,45 +27,55 @@
 
 
 const Shipyard = function () {
-    // this.build = function (type) {
-    //     return (type === 'motorboat') ? console.log('Моторный корабль построен') : console.log('Не могу построить этот тип корабля');
+    // this.repair = function (type) {
+    //     return (type === 'motorboat') ? console.log('Моторный корабль отремонтирован') : console.log('Не могу ремонтировать этот тип корабля');
     // };
-    this.repair = function (type) {
-        return (type === 'motorboat') ? console.log('Моторный корабль отремонтирован') : console.log('Не могу ремонтировать этот тип корабля');
-    };
-    this.repaint = function (type) {
+    this.repaint = function () {
         return console.log('Корабль перекрашен');
     };
-    this.change = function (type) {
-        return (type === 'motorboat') ? console.log('Моторный корабль заменен') : console.log('Не могу заменить этот тип корабля');
-    };
+    // this.change = function (type) {
+    //     return (type === 'motorboat') ? console.log('Моторный корабль заменен') : console.log('Не могу заменить этот тип корабля');
+    // };
 }
 
 
 const ShipyardMotorboat = function () {
-    this.build = function (type, power, material) {
-        return (type === 'motorboat') ? console.log(`Моторный корабль мощностью ${power} из ${material} построен!`) : console.log('Не могу построить этот тип корабля');
+    this.build = function (power, material) {
+        return console.log(`Моторный корабль мощностью ${power} из ${material} построен!`);
+    };
+    this.repair = function (type) {
+        return console.log('Моторный корабль отремонтирован');
+    };
+    this.change = function (type) {
+        return console.log('Моторный корабль заменен');
     };
 }
 
 const ShipyardSailboat = function () {
-    this.build = function (type, n, square) {
-        return (type === 'sailboat') ? console.log(`Парусный корабль c ${n} мачт и площадью парусов ${square} построен!`) : console.log('Не могу построить этот тип корабля');
+    this.build = function (quantity, square) {
+        return console.log(`Парусный корабль c ${quantity} мачт и площадью парусов ${square} построен!`);
+    };
+    this.repair = function (type) {
+        return console.log('Парусный корабль отремонтирован');
+    };
+    this.change = function (type) {
+        return console.log('Парусный корабль заменен');
     };
 }
 
 ShipyardMotorboat.prototype = new Shipyard();
 ShipyardSailboat.prototype = new Shipyard();
 
-
 const ship1 = new ShipyardMotorboat();
 const ship2 = new ShipyardSailboat();
-const ship3 = new ShipyardMotorboat();
 
 
-ship1.build('sailboat');
-ship1.build('motorboat', 1200, 'steal');
-ship2.build('sailboat', 5, 100);
-ship2.build('motorboat');
 
-ship3.change('motorboat');
+ship1.build(1200, 'steal');
+ship2.build(5, 100);
+
+ship1.repair();
+ship2.repair();
+
+ship1.repaint();
+ship2.repaint();
